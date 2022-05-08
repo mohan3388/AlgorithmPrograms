@@ -32,7 +32,7 @@ namespace AlgorithmProblem
        
         public void InsertionSort(string[] array)
         {
-            Console.Write("Unsorted Elements:->");
+            Console.Write("Unsorted Elements:");
             foreach (var element in array)
             {
                 Console.Write(element + " ");
@@ -54,10 +54,39 @@ namespace AlgorithmProblem
             }
         
         }
+
+        public void bubbleSort(int[] arr)
+        {
+
+            int temp;
+            for (int j = 0; j <= arr.Length - 2; j++)
+            {
+                for (int i = 0; i <= arr.Length - 2; i++)
+                {
+                    if (arr[i] > arr[i + 1])
+                    {
+                        temp = arr[i + 1];
+                        arr[i + 1] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+
+        }
+
         public void Display(String[] str)
         {
-            Console.Write("Sorted Elemnets is:-> ");
+            Console.Write("Sorted Elemnets is: ");
             foreach (var elements in str)
+            {
+                Console.Write(elements + " ");
+            }
+            Console.WriteLine(" ");
+        }
+        public void Displaybubble(int[] arr)
+        {
+            Console.Write("Sorted Elemnets is: ");
+            foreach (var elements in arr)
             {
                 Console.Write(elements + " ");
             }
