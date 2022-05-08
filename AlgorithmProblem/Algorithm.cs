@@ -19,15 +19,49 @@ namespace AlgorithmProblem
                 }
                 else if (key.CompareTo(arr[Midvalue]) > 0)
                 {
-                    start=Midvalue+1;
+                    start = Midvalue + 1;
                 }
                 else
                 {
-                    end=Midvalue-1;
+                    end = Midvalue - 1;
                 }
 
             }
             return -1;
+        }
+       
+        public void InsertionSort(string[] array)
+        {
+            Console.Write("Unsorted Elements:->");
+            foreach (var element in array)
+            {
+                Console.Write(element + " ");
+            }
+            Console.WriteLine(" ");
+            int length = array.Length;
+            for (int i = 1; i < length; i++)
+            {
+                string temp = array[i];
+
+             
+                int j = i - 1;
+                while (j >= 0 && temp.Length < array[j].Length)
+                {
+                    array[j + 1] = array[j];
+                    j--;
+                }
+                array[j + 1] = temp;
+            }
+        
+        }
+        public void Display(String[] str)
+        {
+            Console.Write("Sorted Elemnets is:-> ");
+            foreach (var elements in str)
+            {
+                Console.Write(elements + " ");
+            }
+            Console.WriteLine(" ");
         }
     }
 }
