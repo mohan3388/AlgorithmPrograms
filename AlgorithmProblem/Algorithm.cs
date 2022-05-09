@@ -54,6 +54,26 @@ namespace AlgorithmProblem
             }
         
         }
+
+        public void bubbleSort(int[] arr)
+        {
+
+            int temp;
+            for (int j = 0; j <= arr.Length - 2; j++)
+            {
+                for (int i = 0; i <= arr.Length - 2; i++)
+                {
+                    if (arr[i] > arr[i + 1])
+                    {
+                        temp = arr[i + 1];
+                        arr[i + 1] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+
+        }
+
         public void Display(String[] str)
         {
             Console.Write("Sorted Elemnets is:-> ");
@@ -62,6 +82,91 @@ namespace AlgorithmProblem
                 Console.Write(elements + " ");
             }
             Console.WriteLine(" ");
+        }
+        public void merge(int[] arr, int left, int mid, int right)
+        {
+
+            int n1 = mid - left + 1;
+            int n2 = right - mid;
+          
+            int[] Left = new int[n1];
+            int[] Right = new int[n2];
+            int i, j;
+
+            
+            for (i = 0; i < n1; ++i)
+                Left[i] = arr[left + i];
+            for (j = 0; j < n2; ++j)
+                Right[j] = arr[mid + 1 + j];
+
+         
+            i = 0;
+           j = 0;
+
+           
+            int k = left;
+            while (i < n1 && j < n2)
+            {
+                if (Left[i] <= Right[j])
+                {
+                    arr[k] = Left[i];
+                    i++;
+               }
+               else
+               {
+                  arr[k] = Right[j];
+                    j++;
+                }
+                k++;
+            }
+
+            while (i < n1)
+            {
+                arr[k] = Left[i];
+                i++;
+                k++;
+            }
+
+            
+            while (j < n2)
+            {
+                arr[k] = Right[j];
+                j++;
+                k++;
+            }
+        }
+        public void Displaybubble(int[] arr)
+        {
+            Console.Write("Sorted Elemnets is: ");
+            foreach (var elements in arr)
+            {
+                Console.Write(elements + " ");
+            }
+            Console.WriteLine(" ");
+        }
+
+        public void Sorting(int[] arr, int left, int right)
+        {
+            if (left < right)
+            {
+               
+               int mid = left + (right - left) / 2;
+
+               Sorting(arr, left, mid);
+               Sorting(arr, mid + 1, right);
+
+               
+                merge(arr, left, mid, right);
+           }
+        }
+
+        
+        public void printArray(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n; ++i)
+                Console.Write(arr[i] + " ");
+            Console.WriteLine();
         }
     }
 }
