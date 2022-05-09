@@ -168,5 +168,16 @@ namespace AlgorithmProblem
                 Console.Write(arr[i] + " ");
             Console.WriteLine();
         }
+
+        //Anagram
+        public bool Anagram(string firstlength, string secondlength)
+        {
+            var val1 = firstlength.ToLower().ToArray();
+            var val2 = secondlength.ToLower().ToArray();
+            Array.Sort(val1);
+            Array.Sort(val2);
+            return new string(val1) == new string(val2);
+           
+        }
     }
 }

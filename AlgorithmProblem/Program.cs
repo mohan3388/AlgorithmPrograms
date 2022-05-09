@@ -8,7 +8,8 @@ public class Program
         bool check = true;
         while (check)
         {
-            Console.WriteLine("press 1 to display binary search\npress 2 to display insertion sort\npress 3 to display bubble sort\npress 4 to display merge sort");
+            Console.WriteLine("press 1 to display binary search\npress 2 to display" +
+                " insertion sort\npress 3 to display bubble sort\npress 4 to display merge sort\npress 5 to display Anagram");
             Algorithm problem = new Algorithm();
             string Input_File = File.ReadAllText(File_Path);
             int option = Convert.ToInt32(Console.ReadLine());
@@ -50,6 +51,12 @@ public class Program
                     mergesort.Sorting(arr2, 0, arr2.Length - 1);
                     Console.WriteLine("\nsorted array");
                     mergesort.printArray(arr2);
+                    break;
+                 case 5:
+                    
+                    string firstword = "listen";
+                    string secondword = "silent";
+                    Console.WriteLine(problem.Anagram(firstword, secondword));
                     break;
                 case 0:
                     check = false;
