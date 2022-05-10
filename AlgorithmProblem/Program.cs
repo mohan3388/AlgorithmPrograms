@@ -9,7 +9,8 @@ public class Program
         while (check)
         {
             Console.WriteLine("press 1 to display binary search\npress 2 to display" +
-                " insertion sort\npress 3 to display bubble sort\npress 4 to display merge sort\npress 5 to display Anagram");
+                " insertion sort\npress 3 to display bubble sort\npress 4 to display merge sort\n" +
+                "press 5 to display Anagram\npress 6 to display prime number\npress 7 to diplay number is polindrome");
             Algorithm problem = new Algorithm();
             string Input_File = File.ReadAllText(File_Path);
             int option = Convert.ToInt32(Console.ReadLine());
@@ -57,6 +58,12 @@ public class Program
                     string firstword = "listen";
                     string secondword = "silent";
                     Console.WriteLine(problem.Anagram(firstword, secondword));
+                    break;
+                case 6:
+                    problem.PrimeNumber();
+                    break;
+                case 7:
+                    problem.PollindromNumber();
                     break;
                 case 0:
                     check = false;

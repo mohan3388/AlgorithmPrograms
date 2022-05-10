@@ -8,6 +8,7 @@ namespace AlgorithmProblem
 {
     public class Algorithm
     {
+        List<int> list = new List<int>();
         public int Binary(string[] arr, int start, int end, string key)
         {
             while (start <= end)
@@ -178,6 +179,60 @@ namespace AlgorithmProblem
             Array.Sort(val2);
             return new string(val1) == new string(val2);
            
+        }
+
+        //prime number
+        public void PrimeNumber()
+        {
+            int i, j, count;
+            for(i=1; i<=1000; i++)
+            {
+                count = 0;
+                for(j=1; j<=i; j++)
+                {
+                    if(i%j==0)
+                    {
+                        count++;
+                    }
+                }
+                if(count==2)
+                {
+                    Console.WriteLine("prime number: " + i);
+                }
+            }
+        }
+        //prime polindrome
+      
+        public void PollindromNumber()
+        {
+              int rem = 0, count = 0;
+                for(int i=0; i<=1000; i++)
+                {
+                    for(int j=1; j<=i; j++)
+                {
+                    if(i%j==0)
+                    {
+                        count++;
+                    }
+                }
+                if (count == 2)
+                {
+                    while (i > 0)
+                    {
+                        rem = rem * 10 + (i % 10);
+                        i /= 10;
+                    }
+
+
+                    if (rem == i)
+                    {
+                        count++;
+                        Console.WriteLine("Number is Palindrome " + i);
+                    }
+                  
+                }
+                
+            }
         }
     }
 }
